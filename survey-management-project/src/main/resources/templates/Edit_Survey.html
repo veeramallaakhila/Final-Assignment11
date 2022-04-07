@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xlmns="http://www.w3.org/1999/xhtml"
+      xml:th="http:www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Preview Survey Details</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit survey</h1>
+    <br/>
+    <form action="#" th:actions "@{/save}" th:object="${survey}" method="post">
+    <table border="0" cellpadding="10">
+        <tr>
+            <td>Survey Id:</td>
+            <td>
+                <input type="text" th:field="x{id}" readonly="readonly"/>
+
+            </td>
+        </tr>
+        <tr>
+            <td> Survey name:</td>
+            </td>
+        </tr>
+        <tr>
+            <td> survey type;</td>
+            <td>input type="text" th:field="*{Survey Type}"/> </td>
+            <td>input type="text" th:field="*{Start Date}"</td>
+            <td>input type="text" th;field="*{End date}"</td>
+            <td> input type="text" th;field="*{Preview}</td>
+            <td> input type="text" th;field="*{Publish}</td>
+        </tr>
+        <td colspan="2"><button type="submit">save</button><td></td>
+
+    </table>
+    </form>
+</div>
+
+</body>
+</html>

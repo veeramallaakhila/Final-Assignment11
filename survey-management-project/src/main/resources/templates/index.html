@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:="http://www.thymeleaf.org">
+
+</html>
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Management</title>
+</head>
+<body>
+<div align="center">
+    <h1> Survey List</h1>
+    <a href="new"> Create New Survey</a>
+    <br></br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th> Survey Id</th>
+            <th> Survey Name</th>
+            <th> Survey Type</th>
+            <th> Start Date</th>
+            <th> End Date</th>
+            <th> Actions</th>
+
+        </tr>
+        <tbody>
+    <tr th:each="survey:${Listsurvey}">
+        <td th:text="${Survey.Id}"> Survey Id</td>
+        <td th:text="${Survey.Name}"> Survey Name</td>
+        <td th:text="${Survey.StartDate}"> StartDate</td>
+        <td th:text="${Survey.EndDate}"> EndDate</td>
+        <td>
+            <a th:href="@{'Preview/'+${survey.id}">Preview</a>
+            <a onclick="alert('Survey has been Published')</a>
+        </td>
+    </tr>
+    </tbody>
+        </thead>
+    </table>
+</div>
+
+</body>
+</html>
